@@ -9,7 +9,8 @@ import retrofit2.http.Path;
 
 public interface HeroRest {
 
-    // Interface para o endpoit de repositórios de um usuário específico
+    // Interface para o endpoit de repositórios de um heroi específico buscando pelo nome
+
     @GET("search/{name}")
     Call<HeroResponse> searchHero(@Path("name") String name);
 }

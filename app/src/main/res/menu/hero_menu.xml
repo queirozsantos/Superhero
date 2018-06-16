@@ -4,11 +4,13 @@
     <item
         android:id="@+id/remove_hero"
         android:orderInCategory="100"
-        android:icon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/search"
         android:title="Remove"
         app:showAsAction="ifRoom|collapseActionView"
          />
 
+    <!--todo alterar o icone botao de remover-->
+    <!--todo fazer o fragment land scape-->
 
 
 </menu>

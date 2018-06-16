@@ -10,15 +10,22 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
+
+
+import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.unibratec.unibratecheros.R;
+import br.com.unibratec.unibratecheros.deserializer.HeroResponse;
 import br.com.unibratec.unibratecheros.model.Hero;
 import br.com.unibratec.unibratecheros.ui.adapter.HeroRecyclerAdapter;
 import br.com.unibratec.unibratecheros.ui.adapter.HeroRecyclerOnClick;
 import br.com.unibratec.unibratecheros.viewmodel.HeroViewModel;
+import retrofit2.Call;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements HeroRecyclerOnClick {
 
@@ -38,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements HeroRecyclerOnCli
         heroViewModel.getHeros().observe(MainActivity.this, new Observer<List<Hero>>() {
             @Override
             public void onChanged(@Nullable List<Hero> os) {
+             //Toast.makeText(MainActivity.this, R.string.notFound, Toast.LENGTH_LONG).show();
                 heroRecyclerAdapter.addItems(os);
             }
         });

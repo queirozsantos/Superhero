@@ -27,10 +27,12 @@ public class HeroViewModel extends AndroidViewModel {
         return heros;
     }
 
+
+    //salva  o heroi com o click na imagem
     public void insertHero(final Hero hero) {
         new addAsyncTask(appDatabase).execute(hero);
     }
-
+    //remove  o heroi com o click no botao
     public void removeHero(final Hero hero) {
         new removeAsyncTask(appDatabase).execute(hero);
     }

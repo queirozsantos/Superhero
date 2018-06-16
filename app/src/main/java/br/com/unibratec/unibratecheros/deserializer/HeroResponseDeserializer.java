@@ -1,6 +1,6 @@
 package br.com.unibratec.unibratecheros.deserializer;
 
-import android.util.Log;
+
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONWrappedObject;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+
 
 import br.com.unibratec.unibratecheros.model.Appearance;
 import br.com.unibratec.unibratecheros.model.Biography;
@@ -22,7 +22,7 @@ import br.com.unibratec.unibratecheros.model.Powerstats;
 public class HeroResponseDeserializer extends JsonDeserializer<HeroResponse> {
     @Override
     public HeroResponse deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException {
-        Log.d("heee", "teste");
+
         JsonNode node = jp.readValueAsTree();
         HeroResponse r = new HeroResponse();
         r.resultsFor = node.get("results-for").asText("");

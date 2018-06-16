@@ -45,6 +45,13 @@ public class PowerFragment extends Fragment {
 
     private void loadView(View v){
         ((TextView)v.findViewById(R.id.txInteligence)).setText(mPowerstats.intelligence);
+        ((TextView)v.findViewById(R.id.txstrength)).setText(mPowerstats.strength);
+        ((TextView)v.findViewById(R.id.txspeed)).setText(mPowerstats.speed);
+        ((TextView)v.findViewById(R.id.txdurability)).setText(mPowerstats.durability);
+        ((TextView)v.findViewById(R.id.txpower)).setText(mPowerstats.power);
+        ((TextView)v.findViewById(R.id.txcombat)).setText(mPowerstats.combat);
+
+
     }
 
 

@@ -34,7 +34,6 @@ public class HeroFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mHero = getArguments().getParcelable(ARG_PARAM1);
-
         }
     }
 
@@ -49,6 +48,9 @@ public class HeroFragment extends Fragment {
 
     public void loadView(View v){
         TextView name = v.findViewById(R.id.heroName);
+        ((TextView)v.findViewById(R.id.txfullname)).setText(mHero.biography.fullName);
+        ((TextView)v.findViewById(R.id.txplaceOfBirth)).setText(mHero.biography.placeOfBirth);
+        ((TextView)v.findViewById(R.id.txpfirst)).setText(mHero.biography.firstAppearance);
         ImageView imo = v.findViewById(R.id.imageFragment);
         name.setText(mHero.name);
         Picasso.get()

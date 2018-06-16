@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+
 import java.util.ArrayList;
 
 import br.com.unibratec.unibratecheros.R;
@@ -31,6 +33,8 @@ public class HeroSearchActivity extends AppCompatActivity implements HeroRecycle
     private RecyclerView rvHero;
     private HeroRecyclerAdapter heroRecyclerAdapter;
     private HeroViewModel heroViewModel;
+    //load na tela de procura do heroi
+    private MaterialDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +53,16 @@ public class HeroSearchActivity extends AppCompatActivity implements HeroRecycle
         Button bt = findViewById(R.id.bt);
         bt.setOnClickListener(view -> {
             heroRecyclerAdapter.clearData();
+            //load na tela de procura do heroi
+            dialog.show();
             find();
         });
+        dialog = new MaterialDialog.Builder(this)
+                .title("Procurando...")
+                .content("Por favor, Aguarde")
+                .progress(true, 0)
+                //.progressIndeterminateStyle(true)
+                .build();
     }
 
     private void loadRecyclerView() {
@@ -80,15 +92,28 @@ public class HeroSearchActivity extends AppCompatActivity implements HeroRecycle
                 HeroResponse heroResponse = response.body();
                 assert heroResponse != null;
                 heroRecyclerAdapter.addItems(heroResponse.heroes);
+                // fecha o load quando o recycleadpter encontra o herói
+                dialog.dismiss();
 
                 if(heroResponse.heroes.isEmpty()){
-                    Toast.makeText(HeroSearchActivity.this, R.string.notFound, Toast.LENGTH_LONG).show();
+                    new MaterialDialog.Builder(HeroSearchActivity.this)
+                            .title("Atenção")
+                            .content("Herói não Localizado")
+                            .positiveText("OK")
+                            .show();
                 }
             }
 
             @Override
             public void onFailure(Call<HeroResponse> call, Throwable t) {
                 Log.d("teste", call.toString());
+                // fecha o load quando o recycleadpter não encontra o herói
+                dialog.dismiss();
+                new MaterialDialog.Builder(HeroSearchActivity.this)
+                        .title("Atenção")
+                        .content("Herói não Localizado")
+                        .positiveText("OK")
+                        .show();
             }
         });
     }
@@ -99,6 +124,7 @@ public class HeroSearchActivity extends AppCompatActivity implements HeroRecycle
 
     @Override
     public void onClickListener(Hero hero) {
+        //salva  o heroi com o click na imagem
         heroViewModel.insertHero(hero);
         finish();
     }
