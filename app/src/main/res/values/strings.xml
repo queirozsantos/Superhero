@@ -1,36 +1,36 @@
 <resources>
 
-    <string name="app_name1">HEROIS</string>
-    <string name="app_name">Heróis Salvos</string>
-    <string name="notFound">Herói Não Localizado</string>
+    <string name="app_name1">HEROES</string>
+    <string name="app_name">Saved Heroes</string>
+    <string name="notFound">Unsaved Heroes</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="search">Pesquisar</string>
-    <string name="text_serach">Digite o nome do Herói</string>
+    <string name="search">Search</string>
+    <string name="text_serach">Enter the name of the Hero</string>
     <string name="status">Status</string>
-    <string name="hero">Heróis</string>
+    <string name="hero">Heroes</string>
     <!-- <string name="status">Status</string>
     <string name="hero">Hero</string>-->
-    <string name="biografia">Biografia</string>
-    <string name="title_activity_teste">teste</string>
+    <string name="biografia">Biography</string>
+    <string name="title_activity_teste">test</string>
 
 
 
 
     //fragment power
-    <string name="intelligence">Inteligencia:</string>
+    <string name="intelligence">Intelligence:</string>
     <!--<string name="intelligence">Intelligence:</string>-->
-    <string name="strength">Força:</string>
+    <string name="strength">Force:</string>
     <!--<string name="strength">Strength:</string>-->
-    <string name="speed">Velocidade:</string>
+    <string name="speed">Velocity:</string>
     <!--<string name="speed">Speed:</string>-->
-    <string name="durability">Durabilidade:</string>
+    <string name="durability">Durability:</string>
     <!--<string name="durability">Durability:</string>-->
-    <string name="power">Poder:</string>
+    <string name="power">Power:</string>
     <!--<string name="power">Power:</string>-->
-    <string name="combat">Combate:</string>
+    <string name="combat">Combat:</string>
     <!--<string name="combat">Combat:</string>-->
 
 
